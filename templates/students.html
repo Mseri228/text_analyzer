@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Students</h1>
+
+<ul>
+{% for student in students %}
+  <li>{{ student.name }}, {{ student.country }}, {{  student.skills }}</li>
+  {% endfor %}
+</ul>
+
+<a href="{{ url_for('join') }}">Join</a>
+{% endblock %}

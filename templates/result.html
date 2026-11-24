@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Result</h1>
+<p>Characters: {{ result.characters }}</p>
+<p>Words: {{ result.word_count }}</p>
+<h2>Top 10 words</h2>
+<ol>
+  {% for word, count in result.top10 %}
+  <li>{{ word }}: {{ count }}</li>
+  {% endfor %}
+</ol>
+<a href="{{ url_for('post') }}">Analyze another text</a>
+{% endblock %}
